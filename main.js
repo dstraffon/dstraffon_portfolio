@@ -87,4 +87,24 @@
     const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px' });
     rv.forEach(e => io.observe(e));
   }
+
+  // Playground: a piece loads into its frame only when the reader presses play.
+  document.querySelectorAll('.toy[data-src]').forEach(toy => {
+    const src = toy.dataset.src; if (!src) return;
+    const frame = toy.querySelector('.toy-frame'), btn = toy.querySelector('.play'), open = toy.querySelector('.open');
+    const poster = frame.innerHTML;
+    open.href = src; open.hidden = false; btn.hidden = false;
+    btn.addEventListener('click', () => {
+      const on = btn.getAttribute('aria-pressed') === 'true';
+      if (on) { frame.innerHTML = poster; }
+      else {
+        const f = document.createElement('iframe');
+        f.src = src; f.title = `${toy.dataset.name}, live`; f.allow = 'fullscreen; autoplay';
+        frame.replaceChildren(f);
+      }
+      btn.setAttribute('aria-pressed', String(!on));
+      btn.firstChild.textContent = on ? 'Play here ' : 'Stop ';
+      btn.lastElementChild.textContent = on ? '▶' : '■';
+    });
+  });
 })();
