@@ -167,6 +167,8 @@ h2.big,.big{font:600 clamp(1.9rem,4.2vw,3.6rem)/1.04 var(--display);letter-spaci
 .prose ul li::before{content:"";position:absolute;left:0;top:.72em;width:.6em;height:1.5px;background:var(--ember)}
 figure img{border-radius:var(--r);border:1px solid var(--line);background:#fff;width:100%}
 figure.bare img{border:0;background:none}
+figure.pad{--fp:clamp(10px,2.2vw,32px)}
+figure.pad img{box-sizing:content-box;padding:var(--fp);width:calc(100% - 2*var(--fp) - 2px)}
 figcaption{font:400 .8125rem/1.45 var(--mono);color:var(--muted);margin-top:10px;max-width:60em}
 .pair{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap)}
 .tall{max-height:78vh;overflow:auto;border-radius:var(--r);border:1px solid var(--line);overscroll-behavior:contain}
