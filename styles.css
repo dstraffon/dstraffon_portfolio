@@ -275,3 +275,23 @@ figcaption{font:400 .8125rem/1.45 var(--mono);color:var(--muted);margin-top:10px
 }
 [data-detail="everything"] [data-short]{display:none}
 @media (max-width:860px){ .work-item.on h3,.work-item a:hover h3{transform:none} }
+
+/* Playground: a grid of live pieces. Each loads only when asked, so nothing moves until the reader presses play. */
+.toy-intro{margin-top:14px;max-width:32em}
+.no-js .js-only{display:none}
+.toys{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(40px,5vw,72px) var(--gap);padding-top:clamp(40px,6vw,88px)}
+.toy-frame{position:relative;aspect-ratio:16/10;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:grid;place-items:center}
+.toy-frame img{width:100%;height:100%;object-fit:cover}
+.toy-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:#fff}
+.toy-body{margin-top:16px}
+.toy h2{font:600 clamp(1.4rem,2.2vw,1.9rem)/1.08 var(--display);letter-spacing:-.025em;text-wrap:balance}
+.toy-body > p{margin-top:8px;color:var(--muted);max-width:34em}
+.toy .links{display:flex;gap:24px;margin-top:10px;flex-wrap:wrap}
+button.lk{border:0;background:none;padding-inline:0}
+.lk[hidden]{display:none}
+@media (max-width:860px){ .toys{grid-template-columns:1fr} }
+/* On small screens the pieces open in their own tab; a 16:10 frame is too cramped to play in. */
+@media (max-width:600px){ .toy .play,.toy-intro{display:none!important} }
+/* Five nav links: keep the name on one line at phone width. */
+.brand{white-space:nowrap}
+@media (max-width:420px){ .nav{gap:14px} .nav a[href="#contact"]{display:none} }
