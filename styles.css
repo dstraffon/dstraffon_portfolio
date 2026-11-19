@@ -260,10 +260,10 @@ figcaption{font:400 .8125rem/1.45 var(--mono);color:var(--muted);margin-top:10px
 [data-detail="everything"] .dot-short,html.intro .dot-short{display:none}
 .chapter > .prose.sub{grid-column:5/span 7;margin-top:clamp(28px,4vw,56px)}
 .prose.sub h3:first-child{margin-top:0}
-.chapter > figure.phone{grid-column:5/span 3}
+.chapter > figure.phone{grid-column:5/span 4}
 @media (max-width:860px){
   .chapter > .prose.sub{grid-column:1/-1}
-  .chapter > figure.phone{grid-column:1/span 8}
+  .chapter > figure.phone{grid-column:1/span 10}
 }
 .detail{right:50%;transform:translateX(50%)}
 .work-stage .pane{padding:6%}
