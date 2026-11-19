@@ -73,6 +73,7 @@ h2.big,.big{font:600 clamp(1.9rem,4.2vw,3.6rem)/1.04 var(--display);letter-spaci
 .statement b{font-weight:600;background:linear-gradient(var(--blue-soft),var(--blue-soft)) no-repeat 0 88%/100% .32em}
 .statement .aside{grid-column:1/span 5;margin-top:clamp(24px,3vw,44px);font:400 1.0625rem/1.55 var(--body);letter-spacing:0;color:var(--muted)}
 .statement .aside + .aside{grid-column:7/span 5}
+.statement .aside a{text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
 
 /* Work index */
 .work{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gap)}
